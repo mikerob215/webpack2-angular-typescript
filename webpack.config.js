@@ -1,14 +1,41 @@
 'use strict';
 
 const webpack = require('webpack');
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
+
 
 module.exports = {
     context: __dirname + "/src",
     entry: {
-        app: "./main.js"
+        app: "./main.ts"
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+    devtool: 'source-map',
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: [{
+                    loader: "awesome-typescript-loader"
+                }]
+            }
+        ]
     },
     output: {
         path: __dirname + "/dist",
-        filename: "[name].bundle.js"
-    }
+        filename: "[name].bundle.js",
+        publicPath: "/assets"
+    },
+    devServer: {
+        contentBase: __dirname + "/src"
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "commons",
+            filename: "common.js",
+            minChunks: 1
+        })
+    ]
 };
