@@ -17,9 +17,19 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                use: [{
-                    loader: "awesome-typescript-loader"
-                }]
+                use: [
+                    {
+                        loader: "awesome-typescript-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html'
+                    }
+                ]
             }
         ]
     },
@@ -34,8 +44,8 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
-            filename: "common.js",
-            minChunks: 1
+            filename: "commons.js",
+            minChunks: 2
         })
     ]
 };

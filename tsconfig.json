@@ -1,6 +1,4 @@
 {
-  "compileOnSave": false,
-  "buildOnSave": false,
   "compilerOptions": {
     "target": "es5",
     "module": "es2015",
@@ -9,7 +7,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "types": []
+    "types": ["node"]
   },
   "files": [],
   "exclude": [
