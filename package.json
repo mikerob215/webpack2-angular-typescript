@@ -6,10 +6,15 @@
     "url": "git@github.com:mikerob215/webpack2-angular-typescript.git",
     "type": "git"
   },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "author": "mikerobinson <mikerobinson1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "awesome-typescript-loader": "^2.2.4",
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
     "ts-loader": "^1.2.0",
     "typescript": "^2.0.0",
     "typescript-loader": "^1.1.3",

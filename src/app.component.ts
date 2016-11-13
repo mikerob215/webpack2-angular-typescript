@@ -1,4 +1,5 @@
 let template = require('./app.template.html');
+import './styles.css';
 
 export default class AppComponent implements ng.IComponentOptions {
     public template = template;
